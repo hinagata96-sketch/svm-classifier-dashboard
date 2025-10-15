@@ -7,6 +7,12 @@ A comprehensive Streamlit web application for training, testing, and deploying S
 ![Scikit-learn](https://img.shields.io/badge/scikit--learn-v1.3+-orange.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
+## 🚀 Live Demo
+
+**Try the live application:** [SVM Classifier Dashboard](https://svm-classifier-dashboard.streamlit.app)
+
+> 🎯 **Quick Start:** Upload the included `sample_iris_data.csv`, select all features and the 'species' target, then click "Train SVM Model" to see it in action!
+
 ## 🚀 Features
 
 - 📁 **Interactive File Upload**: Upload CSV datasets directly through the web interface
@@ -59,6 +65,42 @@ streamlit run svm.py
 ```
 
 5. **Open your browser** and navigate to `http://localhost:8501`
+
+## 🌐 Deployment
+
+### Streamlit Cloud Deployment
+
+This app is deployed on Streamlit Cloud and accessible at: [svm-classifier-dashboard.streamlit.app](https://svm-classifier-dashboard.streamlit.app)
+
+#### Deploy Your Own Copy
+
+1. **Fork this repository** on GitHub
+2. **Go to [share.streamlit.io](https://share.streamlit.io)**
+3. **Sign in** with your GitHub account
+4. **Click "New app"**
+5. **Select your forked repository**
+6. **Set main file path:** `svm.py`
+7. **Click "Deploy"**
+
+### Alternative Deployment Options
+
+#### Heroku
+```bash
+# Install Heroku CLI, then:
+heroku create your-svm-dashboard
+git push heroku main
+```
+
+#### Docker
+```dockerfile
+FROM python:3.9-slim
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+COPY . .
+EXPOSE 8501
+CMD ["streamlit", "run", "svm.py", "--server.port=8501", "--server.address=0.0.0.0"]
+```
 
 ## 📋 Usage
 
